@@ -14,6 +14,7 @@ defmodule Passwordless do
       supervisor(Passwordless.Endpoint, []),
       # Start your own worker by calling: Passwordless.Worker.start_link(arg1, arg2, arg3)
       # worker(Passwordless.Worker, [arg1, arg2, arg3]),
+      worker(Passwordless.User, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

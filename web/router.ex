@@ -17,6 +17,10 @@ defmodule Passwordless.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    post "/create_token", PageController, :create_token
+    get "/token/:token", PageController, :verify_token
+    get "/logout", PageController, :logout
   end
 
   # Other scopes may use custom stacks.
